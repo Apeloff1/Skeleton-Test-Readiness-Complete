@@ -1,0 +1,9 @@
+name: Test Readiness
+on: [push, pull_request]
+jobs:
+  suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run orchestrator
+        run: python src/test_orchestrator.py
